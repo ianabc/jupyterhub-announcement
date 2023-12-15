@@ -159,6 +159,7 @@ class AnnouncementService(Application):
                     dict(
                         queue=self.queue,
                         fixed_message=self.fixed_message,
+                        service_prefix=self.service_prefix,
                         loader=loader,
                     ),
                     "view",

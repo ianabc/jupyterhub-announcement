@@ -23,9 +23,10 @@ class AnnouncementHandler(HubOAuthenticated, web.RequestHandler):
 class AnnouncementViewHandler(AnnouncementHandler):
     """View announcements page"""
 
-    def initialize(self, queue, fixed_message, loader):
+    def initialize(self, queue, fixed_message, service_prefix, loader):
         super().initialize(queue)
         self.fixed_message = fixed_message
+        self.service_prefix = service_prefix
         self.loader = loader
         self.env = Environment(loader=self.loader)
         self.template = self.env.get_template("index.html")
