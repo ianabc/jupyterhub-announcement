@@ -39,6 +39,7 @@ class AnnouncementViewHandler(AnnouncementHandler):
             self.template.render(
                 user=user,
                 fixed_message=self.fixed_message,
+                service_prefix=self.service_prefix,
                 announcements=self.queue.announcements,
                 static_url=self.static_url,
                 login_url=self.hub_auth.login_url,
